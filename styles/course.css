@@ -6,9 +6,11 @@
 
   :root {
 	--body-color: #eee;
-	--hover-color: #f1e20adf;
+	--footer-color: #f1e20adf;
   --bg-color:  rgb(2, 2, 105);
   --btn-bg-color: rgba(34, 36, 39, 0.953);
+  --hover-color: rgba(13, 175, 162, 0.788);
+  --body-bg: rgba(236, 240, 237, 0.911);
 }
 
   .poppins-thin {
@@ -40,21 +42,30 @@
     max-width: 1060px;
     color: var(--body-color);
     margin: 10px auto;
-    background-color: rgba(236, 240, 237, 0.911);
+    background-color: var(--body-bg);
   }
 
   .intro {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
     background: var(--bg-color);
-    height: 170px;
+    height: 150px;
   }
         
   
   .intro img {
-    width: 130px;
+    width: 100px;
+  }
+
+  .intro2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .intro2 h1 {
+    font-size: 24px;
   }
   
 
@@ -69,12 +80,12 @@
   .navbar a {
     display: none;
     text-decoration: none;
-    color: #eee;
+    color: var(--body-color);
   }
   
   .navbar a:hover {
     font-weight: 500;
-    color: rgba(13, 175, 162, 0.788);
+    color: var(--hover-color);
   }
 
   #menu {
@@ -82,9 +93,7 @@
 	border: 0;
 	background: none;
 	color: var(--body-color);
-	position: absolute;
-	top: 0.8rem;
-	right: 1.2rem;
+  align-self: flex-end;
 }
 
 #menu::before {
@@ -161,7 +170,7 @@
 }
 
 button:hover {
-    background: #563434;
+    background: var(--hover-color);
 }
 
 .courses {       
@@ -192,7 +201,7 @@ footer img {
   }
 
   #lastModified {
-	color: var(--hover-color);
+	color: var(--footer-color);
   }
 
   .grid-container1 {
@@ -230,11 +239,33 @@ footer img {
 
   
   @media screen and (min-width: 600px) { 
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: var(--bg-color);
+      height: 170px;
+    }
+
+    .intro2 {
+      gap: 20px;
+    }
+
+    .intro2 h1 {
+      font-size: 32px;
+    }
+          
+    
+    .intro img {
+      width: 130px;
+    }
     
     
     #menu {
-		display: none; 
-	}
+		  display: none; 
+	  }
 
     .navbar {
         padding: 1rem 4rem;
