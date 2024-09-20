@@ -199,8 +199,6 @@ footer img {
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 10px;
-    
-    padding: 0 auto;
   }
 
   .credit {
