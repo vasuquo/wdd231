@@ -1,0 +1,271 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+	--body-color: #eee;
+	--hover-color: #f1e20adf;
+  --bg-color:  rgb(2, 2, 105);
+  --btn-bg-color: rgba(34, 36, 39, 0.953);
+}
+
+  .poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    max-width: 1060px;
+    color: var(--body-color);
+    margin: 10px auto;
+    background-color: rgba(236, 240, 237, 0.911);
+  }
+
+  .intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--bg-color);
+    height: 170px;
+  }
+        
+  
+  .intro img {
+    width: 130px;
+  }
+  
+
+  .navbar {
+    padding: 1rem 4rem;
+    font-size: 20px;
+    display: flex;
+	  flex-direction: column;
+    background-color: var(--bg-color);
+  }
+  
+  .navbar a {
+    display: none;
+    text-decoration: none;
+    color: #eee;
+  }
+  
+  .navbar a:hover {
+    font-weight: 500;
+    color: rgba(13, 175, 162, 0.788);
+  }
+
+  #menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: var(--body-color);
+	position: absolute;
+	top: 0.8rem;
+	right: 1.2rem;
+}
+
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "❎";
+}
+
+.open a {
+	display: block;
+}
+  
+.cwork, .place, .cert {
+    margin-top: 10px;
+}
+
+.cwork h2, .place h2, .cert h2 {
+    background-color: var(--bg-color);
+}
+
+
+.cwork, .place, .cert {
+    border: silver solid;
+    border-radius: 10px;
+  }
+
+  
+ .place {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    color: black;
+    margin-left: 40px;
+  }
+
+
+  .place img {
+    width: 300px;
+    align-self: center;
+  }
+
+  .place p {
+    font-size: small;
+    color: rgb(7, 6, 6);
+    text-align: center;
+  }
+
+  .course-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: silver solid;
+  }
+
+  button {
+    width: 100px;
+    background-color: var(--btn-bg-color);
+    color: var(--body-color);
+    padding: 10px 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #563434;
+}
+
+.courses {       
+    display: block;
+    margin: 10px 0;
+}
+
+  
+footer {
+ padding: 0.8rem;
+ background: var(--bg-color);
+}
+  
+footer p {
+	color: var(--body-color);
+	text-align: center;
+}
+
+footer img {
+    width: 50px;
+}
+
+.loc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #lastModified {
+	color: var(--hover-color);
+  }
+
+  .grid-container1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    
+    padding: 0 auto;
+  }
+
+  .credit {
+    padding: 10px 10px;
+    background-color: var(--bg-color);
+    color: var(--body-color);
+    text-align: center;
+    max-width: fit-content;
+    border-radius: 20px;
+    margin: 5px auto;
+  }
+
+  .box {
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .box1 {
+    background-color: blue;
+    color: #fff;
+  }
+
+  .box2 {
+    background-color: rgba(117, 5, 24, 0.603);
+    color: #eee;
+  }
+
+  
+  @media screen and (min-width: 600px) { 
+    
+    
+    #menu {
+		display: none; 
+	}
+
+    .navbar {
+        padding: 1rem 4rem;
+        font-size: 20px;
+        background-color: rgba(34, 36, 39, 0.953);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+    .navbar a {
+        display: block;
+        text-decoration: none;
+        color: #eee;
+      }
+
+      .grid-container1 {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+        background-color: rgba(102, 184, 184, 0.171);
+      }
+
+      .courses {       
+        justify-items: center;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
