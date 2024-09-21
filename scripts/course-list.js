@@ -82,6 +82,7 @@ const coursesElement = document.querySelector(".courses");
 const allBtn = document.querySelector(".all");
 const cseBtn = document.querySelector(".cse");
 const wddBtn = document.querySelector(".wdd");
+const aElements = document.querySelectorAll(".navbar a");
 
 
 
@@ -133,4 +134,10 @@ const reset = () => {
     filterCourses("WDD");
   });
   
-  
+  aElements.forEach((a) => {
+    a.addEventListener("click", () => {
+      h2tag.textContent = a.textContent;
+      filterTemples();
+    });
+  });
+    

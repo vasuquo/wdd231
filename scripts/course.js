@@ -107,6 +107,7 @@ const creditElement = document.querySelector(".credit");
 const allBtn = document.querySelector(".all");
 const cseBtn = document.querySelector(".cse");
 const wddBtn = document.querySelector(".wdd");
+const links = document.querySelectorAll(".navbar a");
 
 /* displayCourses Function */
 const displayCourses = (courseList) => {
@@ -159,3 +160,17 @@ menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("open");
 });
   
+if (links.length) {
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      links.forEach((link) => {
+          link.classList.remove('active');
+      });
+      e.preventDefault();
+      link.classList.add('active');
+      if (!link.href.includes('index.html')) {
+         window.open(link.href, '_blank').focus();
+      }
+    });
+  });
+}
