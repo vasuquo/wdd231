@@ -168,7 +168,7 @@ if (links.length) {
       });
       e.preventDefault();
       link.classList.add('active');
-      if (!link.href.includes('index.html')) {
+      if (!link.href.includes('index.html') || !link.href.includes('github')) {
          window.open(link.href, '_blank').focus();
       }
     });
