@@ -1,0 +1,85 @@
+{
+ "mymem": [
+    {
+        "name": "Altak Industries Ltd",
+        "address": "Km 8, Challenge Ibadan",
+        "phone": ["0807 648 3832"],
+        "website": "https://altakind.com",
+        "imageFile": "images/altak.webp",
+        "membershipLevel": "2",
+        "email": "sales@altakindng.com"
+    }, 
+    {
+        "name": "Bevpak Nig. Ltd",
+        "address": "Km3 Ibadan-Lagos Expressway",
+        "phone": ["0806 780 0580", "0803 350 4918", "0806 880 8418"],
+        "website": "http://www.bevpakng.com",
+        "imageFile": "images/bevpak.webp",
+        "membershipLevel": "1",
+        "email": "sales@bevpakng.com"
+    }, 
+    {
+        "name": "Isoglass Industries Nig. Ltd",
+        "address": "Plot 17 Oluyole Ind. Estate, Ring Road",
+        "phone": ["0708 298 3591", "0806 350 2989", "0817 750 6466"],
+        "website": "http://www.isoglass.com",
+        "imageFile": "images/isoglasss.webp",
+        "membershipLevel": "2",
+        "email": "info@isoglassind.com"
+    },
+    {
+        "name": "ROM Oil Mills",
+        "address": "Ibadan Ijebu Ode Road",
+        "phone": ["0705 689 1000", "0705 689 2000"],
+        "website": "https://rom-oil-mills.com",
+        "imageFile": "images/romoil.webp",
+        "membershipLevel": "1",
+        "email": "romoilmills@gmail.com"
+    },
+    {
+        "name": "Expand Global Industries Ltd",
+        "address": "Plot 9 Block f, Oluyole",
+        "phone": ["0906 287 7388"],
+        "website": "https://expandglobal.com.ng",
+        "imageFile": "images/exglobal.webp",
+        "membershipLevel": "3",
+        "email": "expandglobal@gmail.com"
+    },
+    {
+        "name": "De Shamelium Nig Ltd",
+        "address": "Klm 20 Kulodi Road",
+        "phone": ["08108969714", "08022282587"],
+        "website": "https://deshamelium.ng",
+        "imageFile": "images/dsnl.webp",
+        "membershipLevel": "3",
+        "email": "deliumnigltd@gmail.com"
+    },
+    {
+        "name": "Premier Feed Mills",
+        "address": "1 Eagle Flour Road",
+        "phone": ["0908 750 4822", "0705 689 2000", "0705 689 1000"],
+        "website": "https://premierfeedsltd.com",
+        "imageFile": "images/pfmills.webp",
+        "membershipLevel": "3",
+        "email": "info@premierfeeds.com"
+    },
+    {
+        "name": "Stop Fashion",
+        "address": "22, Adeyi Avenue, Bodija",
+        "phone": ["0803 272 9790"],
+        "website": "https://stopfashion.com",
+        "imageFile": "images/sfashion.webp",
+        "membershipLevel": "3",
+        "email": "stopfashion1@gmail.com"
+    },
+    {
+        "name": "Delak Natural Drinks Ltd",
+        "address": "Abonde Road, Oyo, Ibadan",
+        "phone": ["0813 300 4426"],
+        "website": "https://delakdrinks.com",
+        "imageFile": "images/ddrinks.webp",
+        "membershipLevel": "3",
+        "email": "delakdrinks@gmail.com"
+    }
+  ]
+}

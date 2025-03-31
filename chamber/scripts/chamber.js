@@ -1,0 +1,339 @@
+
+const app = {
+  init: () => {
+    //based on the current page...
+    let page = document.body.id;
+
+    switch (page) {
+      case "home":        
+        app.loadGallery();
+        app.toggleMenu();
+        app.toggleLinks();
+        app.getWeather();
+        app.getSpotLight();
+        break;
+      case "directory":
+        let dirType;
+        app.getMembers("Grid");
+        app.toggleMenu();
+        app.toggleLinks();
+        app.toggleDirectory();
+        break;
+      case "join":
+        app.toggleMenu();
+        app.toggleLinks();
+        break;
+      case "discover":
+        app.toggleMenu();
+        app.toggleLinks();
+        break;      
+      default:
+    }
+
+    app.getCopyRight();
+  },
+  getMembers: async (option) => {
+    try {
+      let dirListing = document.querySelector("#dir");
+      let response = await fetch('data/members.json');
+      let data = await response.json();
+      if (option === "List") {
+        dirListing.innerHTML = `⏹️Grid`;
+        dirType = "Grid";
+        app.showList(data.mymem);      
+      } else if (option === "Grid") {
+        dirListing.innerHTML = `📄List`;
+        dirType = "List";
+        app.showGrid(data.mymem);      
+      }
+        
+    } catch (error) {
+      console.log(error);
+    }
+
+  },
+
+  toggleMenu: () => {
+    let menuButton = document.querySelector("#menu");
+    let navigation = document.querySelector(".navbar");
+
+    /* Event Listener for mobile menu  */
+    menuButton.addEventListener("click", () => {
+      navigation.classList.toggle("open");
+      menuButton.classList.toggle("open");
+    });
+    
+  },
+  toggleLinks: () => {
+    let links = document.querySelectorAll(".navbar a");
+
+    /* Event Listener for mobile menu  */
+    if (links.length) {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          links.forEach((link) => {
+              link.classList.remove('active');
+          });
+    //      e.preventDefault();
+          link.classList.add('active');
+    //      if (!link.href.includes('index.html') || !link.href.includes('github')) {
+    //         window.open(link.href, '_blank').focus();
+    //      }
+        });
+      });
+    }
+    
+  },
+  toggleDirectory: () => {
+    let cards = document.querySelector(".cards");
+    let display = document.querySelector("article");
+    let dirListing = document.querySelector("#dir");
+    dirListing.addEventListener("click", () => {   
+      cards.innerHTML = "";
+      display.innerHTML = "";
+      app.getMembers(dirType);
+    });
+    
+  },
+  /* showGrid function displays member details in grid format  */
+  showGrid: (members) => {
+    let cards = document.querySelector(".cards");    
+    cards.innerHTML = "";
+    if (members) {
+      members.forEach((member) => {
+      let card = document.createElement("div");
+      card.classList.add("card");
+      let cardheader = document.createElement("div");
+      cardheader.classList.add("card-header");
+      let name = document.createElement("h2");
+      name.textContent = member.name;
+      let address = document.createElement("h3");
+      address.textContent = member.address;
+      
+  
+      cardheader.appendChild(name);
+      cardheader.appendChild(address);
+  
+      let cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
+      let cardImg = document.createElement("img");
+      cardImg.setAttribute("src", member.imageFile);
+      cardImg.setAttribute("alt", member.name);
+      
+      let cardDetail = document.createElement("div");
+      cardDetail.classList.add("card-detail");
+
+      let cardDetail1 = document.createElement("p");
+      let cardDetail2 = document.createElement("p");
+      let cardDetail3 = document.createElement("p");  
+      let cardDetail4 = document.createElement("p");      
+
+      let status;
+
+      switch (member.membershipLevel) {
+        case "1":
+          status = "Gold";
+          break;
+        case "2":
+            status = "Silver";
+            break;
+        case "3":
+            status = "Bronze";
+            break;
+        default:
+          break;
+      }
+            
+      cardDetail1.innerHTML = `<strong>Email:</strong> ${member.email}`;
+      cardDetail2.innerHTML = `<strong>Phone:</strong> ${member.phone[0]}`;
+      cardDetail3.innerHTML = `<strong>URL:</strong> ${member.website}`;
+      cardDetail4.innerHTML = `<strong>Status:</strong> ${status}`;
+
+      cardDetail.appendChild(cardDetail1);
+      cardDetail.appendChild(cardDetail2);
+      cardDetail.appendChild(cardDetail3);
+      cardDetail.appendChild(cardDetail4);
+
+      cardBody.appendChild(cardImg);
+      cardBody.appendChild(cardDetail); 
+            
+      card.appendChild(cardheader);
+      card.appendChild(cardBody); 
+      cards.appendChild(card);   
+    });
+  }
+    
+  },
+
+  showList: (members) => {
+    let display = document.querySelector("article");
+    display.innerHTML = "";
+
+  if (members) {
+    members.forEach((member) => {
+      let logo = document.createElement("img");
+      logo.classList.add("listing");
+      logo.setAttribute("src", member.imageFile);
+      logo.setAttribute("alt", member.name);
+      logo.setAttribute("loading", "lazy");
+      logo.setAttribute("width", "55");
+      logo.setAttribute("height", "55");        
+      let section = document.createElement("section");
+      section.classList.add("listing");
+      let name = document.createElement("p");
+      name.classList.add("decorate");
+      name.textContent = member.name;
+      let address = document.createElement("p");
+      address.textContent = member.address;
+      let phone = document.createElement("p");
+      phone.textContent = member.phone[0];
+      let email = document.createElement("p");      
+      email.textContent = member.email;
+      let website = document.createElement("a");
+      website.setAttribute("href",member.website);
+      website.innerHTML = member.website;
+
+      section.appendChild(logo);
+      section.appendChild(name);
+      section.appendChild(address);
+      section.appendChild(phone);
+      section.appendChild(email);
+      section.appendChild(website);
+
+      display.appendChild(section);
+    });
+    }
+  },
+  
+  loadGallery: () => {
+    let slider = document.querySelector('.slider');
+    let images = document.querySelectorAll('.slider img');
+    let index = 0; 
+    
+    function swapImages() {
+      index = (index + 1) % images.length;
+      slider.style.transform = `translateX(${-index * 600}px)`;
+    }
+
+    setInterval(swapImages, 3000);
+    
+  },
+
+  getWeather: () => {
+    let lat = 7.377376537971772;
+    let lon = 3.950717703055265;
+    let url;
+    let days = 3;
+    const appid = "1ffd377f92f6b3a42caed1a63b316572";
+    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${appid}`;
+    const forcastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${appid}`;    
+    app.apiFetch(currentUrl,"current");
+    app.apiFetch(forcastUrl,"forecast");
+  },
+
+  apiFetch: async (url,wtype) => {
+
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+          const data = await response.json();            
+          app.displayResults(data,wtype);
+      } else {
+          throw Error(await response.text());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  },
+
+  displayResults: (data,wtype) => {
+    let currentTemp = document.querySelector('#current-temp');
+    let weatherIcon = document.querySelector('#weather-icon');
+    let weatherDesc = document.querySelector('#weather-desc');
+    let forecastTemp = document.querySelector('#forecast-temp');
+
+    let desc;
+    let icon;
+    let temp;
+    let iconsrc;
+    let temp2;
+
+    if (wtype === "current") {
+      desc = data.weather[0].description;
+      icon = data.weather[0].icon;
+      temp = data.main.temp;
+      iconsrc = `https://openweathermap.org/img/w/${icon}.png`;
+      currentTemp.innerHTML = `  ${temp}&deg;C`;
+      weatherIcon.setAttribute('src', iconsrc);
+      weatherIcon.setAttribute('alt', desc);
+      weatherDesc.textContent = `Current weather is ${desc}`;
+    }
+    if (wtype === "forecast") {
+       temp2 = data.list[0].main.temp;
+       forecastTemp.innerHTML = `  ${temp2}&deg;C`;
+    }
+
+    
+  },
+
+  getSpotLight: async () => {
+    try {
+      let response = await fetch('data/members.json');
+      let data = await response.json();
+      let spotLight = [];
+      let randomList = [];
+      let index = 0;
+      data.mymem.forEach((member) => {
+        if (member.membershipLevel === "1" || member.membershipLevel === "2") {
+           spotLight.push(member);
+        }           
+      });
+
+      let currentIndex = spotLight.length;
+
+      for (let i = 0; i < 3; i++) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        randomList[i] = spotLight[randomIndex];
+        currentIndex--;        
+      }
+      app.showGrid(randomList);                    
+    } catch (error) {
+      console.log(error);
+    }
+
+  },
+
+                                                                                                      
+  /* Copyright function */
+  getCopyRight: () => {
+    let projectName = document.querySelector("#projectName");
+    let copyRight = document.querySelector("#copyRight");
+    let modification = document.querySelector("#lastModified");
+    let currentYear = new Date().getFullYear();
+    projectName.innerHTML = `WDD231 Class Project <br>Victor E. Asuquo`;        
+    copyRight.innerHTML = `&copy; <span>${currentYear}</span> Ifelodun Chamber of Commerce`;    
+    modification.innerHTML = `Last Modification: ${app.getLastModifiedDate()}`;
+
+  },
+
+  /* Last modification function    */
+  getLastModifiedDate: () => {
+    let modiDate = new Date(document.lastModified);
+    let Seconds;
+
+    if (modiDate.getSeconds() < 10) {
+        Seconds = `0${modiDate.getSeconds()}`;
+      } else {
+        Seconds = modiDate.getSeconds();
+    }
+
+    let curTime = `${modiDate.getHours()}:${modiDate.getMinutes()}:${Seconds}`;
+    let showDateTime = `${modiDate.getDate()}/${modiDate.getMonth() + 1}/${modiDate.getFullYear()} ${curTime}`;
+    return showDateTime;
+  },
+
+  
+};
+
+app.init();
