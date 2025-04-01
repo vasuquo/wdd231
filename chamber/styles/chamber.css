@@ -167,6 +167,10 @@ main .container .hero {
 }
 
 #join {
+  z-index: 10;
+  position: absolute;
+  top: 290px;
+  left: 200px;
   padding: 15px;
   color: var(--body-bg-color);
   background-color: var(--body-color);
@@ -175,7 +179,7 @@ main .container .hero {
   font-size: 18px;
   font-weight: 700;
   margin-top: 10px;
-  width: 25%;
+  width: 20%;
 }
 .row {
   margin-top: 10px;
