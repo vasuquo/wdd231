@@ -228,9 +228,6 @@ main .container .hero {
   font-size: 32px;
 }
 
-#weather-icon {
-  background-color: var(--card-bg-color);
-}
 
 #current-temp {
   font-size: larger;

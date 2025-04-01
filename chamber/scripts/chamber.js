@@ -220,8 +220,8 @@ const app = {
   },
 
   getWeather: () => {
-    let lat = 7.377376537971772;
-    let lon = 3.950717703055265;
+    let lat = 7.38;
+    let lon = 3.95;
     let url;
     let days = 3;
     const appid = "1ffd377f92f6b3a42caed1a63b316572";
@@ -249,9 +249,11 @@ const app = {
 
   displayResults: (data,wtype) => {
     let currentTemp = document.querySelector('#current-temp');
-    let weatherIcon = document.querySelector('#weather-icon');
-    let weatherDesc = document.querySelector('#weather-desc');
+    let weatherCondition = document.querySelector('.weather-condition');
+    let weatherDesc = document.createElement("p");
     let forecastTemp = document.querySelector('#forecast-temp');
+    let weatherIcon = document.createElement("img");
+
 
     let desc;
     let icon;
@@ -267,7 +269,9 @@ const app = {
       currentTemp.innerHTML = `  ${temp}&deg;C`;
       weatherIcon.setAttribute('src', iconsrc);
       weatherIcon.setAttribute('alt', desc);
-      weatherDesc.textContent = `Current weather is ${desc}`;
+      weatherDesc.textContent = `Weather Condition is ${desc}`;
+      weatherCondition.appendChild( weatherIcon);
+      weatherCondition.appendChild(weatherDesc);
     }
     if (wtype === "forecast") {
        temp2 = data.list[0].main.temp;
