@@ -212,9 +212,7 @@ main .container .hero {
 }
 
 .events, .weather {
-  border: 2px var(--body-bg-color) solid;
-  width: 600px;
-  height: 200px;
+  border: 2px var(--body-bg-color) solid;  
   text-align: center;
   background: var(--card-bg-color);
   color: var(--body-color);
@@ -403,6 +401,16 @@ main .container .listing img {
     display: flex;
     flex-direction: row;
   }
+
+  .events, .weather {
+    border: 2px var(--body-bg-color) solid;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    background: var(--card-bg-color);
+    color: var(--body-color);
+  }
+  
     
   footer .container {    
       display: flex;
