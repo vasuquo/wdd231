@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #ffffff;
+    --bg-color: #00008b;
+    --secondary-color: #555;
+    --underline-color: #ff523b;
+    --rating-color: #f0c040;
+    --btn-bg-color: #b30707;
+    --article-border: border: 1px #c0c0c0 solid;
+    --card-border: 0.1rem #c0c0c0 solid;
+    --card-bg-color: #f8fef8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 10px 30px;
+    max-width: 980px;   
+    line-height: 1.6;
+    background: radial-gradient(#fff, rgb(214, 232, 255));
+}
+
+header h1 {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+article {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+article h2 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+article div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+#desktop {
+    max-width: 450px;
+    width: 100%;
+}
+
+.menu {
+    width: 50px;
+    background-color: var(--secondary-color);
+}
+
+.head{
+    width: 50px;
+    background-color: var(--bg-color);        
+}
+
+.btncolors {
+    width: 50px;
+    background-color: var(--btn-bg-color);
+}
+
+footer {
+    background-color: var(--bg-color);
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--primary-color);
+}
+
