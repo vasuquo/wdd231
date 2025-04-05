@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of Commerce Home Page">
+      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of commerce Thank you Page">
     <meta property="og:title" content="Ifelodun Ibadan Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vasuquo.github.io/wdd231/chamber">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/chamber.js" defer></script>
 </head>
-<body id="home">
+<body id="summary">
     <header>
         <div class="container">
             <div class="logo">
@@ -33,9 +33,9 @@
             </div>
             <div class="grp">
                 <nav class="navbar">
-                    <a href="index.html" title="Home" class="active">Home</a>
+                    <a href="index.html" title="Home">Home</a>
                     <a href="directory.html" title="Directory">Directory</a>
-                    <a href="join.html" title="Join">Join</a>
+                    <a href="join.html" title="Join" class="active">Join</a>
                     <a href="#" title="Discover">Discover</a>                                                
                 </nav>
                 <div class="icons">
@@ -47,40 +47,16 @@
     </header>
     <main>
         <div class="container">
-            <div class="hero">
-                <p class="w1">Welcome to Ifelodun Chamber of Commerce</p>
-                <p class="w2">Connecting businesses, fostering growth, and enriching our community</p>
-                <button id="join" onClick="location.href='join.html'">Join Us Today</button>
-            </div>
-            <div class="row">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="./images/ife_bus_1.webp" alt="Image 1">
-                        <img src="./images/ife_bus_2.webp" alt="Image 2">
-                        <img src="./images/ife_bus_3.webp" alt="Image 3">
-                        <img src="./images/ife_bus_4.webp" alt="Image 4">
-                        <img src="./images/ife_bus_5.webp" alt="Image 5">
-                    </div>
-                </div>
-                <div class="event-weather">
-                    <div class="events">
-                        <h2>community Events</h2>
-                        <p>Join the local farmers market every saturday at 10 Am.</p>
-                        <p>Ifelodun annual business expo – take advantage to promote your products and services.</p>
-                        <p>
-                            Ogun state sponsored Workshops & Seminars – Educational sessions on topics like marketing, finance, leadership, and digital transformation for business success.</p>
-                    </div>
-                    <div class="weather">
-                        <h2>Weather</h2>
-                        <p>Current temperature in Ibadan, Nigeria<span id="current-temp"></span></p>
-                        <div class="weather-condition"></div>  
-                        <p>Forecast temperature is <span id="forecast-temp"></span></p>                      
-                    </div>
-                </div>                           
-            </div>
-            <div><h1>Member Spotlights</h1></div>
-            <section class="cards"></section>
-            <article></article>            
+            <div class="thanks-container">                
+                <table id="summaryTable"> 
+                    <caption>Membership Application Summary</caption>
+                    <tr>
+                        <th>Field</th>
+                        <th>Response</th>
+                    </tr>
+                </table>   
+                <p>Thank you for registeing with us</p>                      
+            </div>                                                      
         </div>
     </main>
     <footer>

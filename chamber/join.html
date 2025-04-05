@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of Commerce Join Page">
+      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of commerce directory Page">
     <meta property="og:title" content="Ifelodun Ibadan Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vasuquo.github.io/wdd231/chamber">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/chamber.js" defer></script>
 </head>
-<body id="home">
+<body id="add">
     <header>
         <div class="container">
             <div class="logo">
@@ -34,7 +34,7 @@
             <div class="grp">
                 <nav class="navbar">
                     <a href="index.html" title="Home">Home</a>
-                    <a href=/directory.html" title="Directory">Directory</a>
+                    <a href="directory.html" title="Directory">Directory</a>
                     <a href="join.html" title="Join" class="active">Join</a>
                     <a href="#" title="Discover">Discover</a>                                                
                 </nav>
@@ -47,56 +47,72 @@
     </header>
     <main>
         <div class="container">
-            <div class="form-container">
-                <h2>Ifelodun Membership Form</h2>
-                <form class="wform" method="get" action="review.html">
-
-                    <label for="fname">First Name<span class="marker">*</span> 
-                        <input type="text" required name="fname" title="First Name" autocomplete="first name">
-                    </label>
-                    <label for="lname">Last Name<span class="marker">*</span> 
-                        <input type="text" required name="lname" title="last Name" autocomplete="last name">
-                    </label>
-                    <label for="orgtitle">Organizational Title<span class="marker">*</span>
-                        <input type="text" name="orgtitle" title="Organizational Title" autocomplete="organization-title" pattern="^[A-Za-z\-\s]{7,}$" required>
-                    </label>
-                    <label for="email">Email<span class="marker">*</span>
-                        <input type="email" name="email" title="email" autocomplete="email" placeholder="jdoe@gmail.com" required>
-                    </label>
-                    <label for="phone">Phone Number<span class="marker">*</span>
-                        <input type="tel" name="phone" title="phone number" autocomplete="phone" required>
-                    </label>
-                    <label for="business">Business Name<span class="marker">*</span>
-                        <input type="text" name="business" title="business name" autocomplete="organization" required>
-                    </label>
-                    
-                    <label for="mlevel">Membership Level<span class="marker">*</span></label>
-                    <label><input type="radio" name="mlevel" required value="1">NP Membership</label>  
-                    <label><input type="radio" name="mlevel" required value="2">Bronze Membership</label>
-                    <label><input type="radio" name="mlevel" required value="3">Silver Membership</label>
-                    <label><input type="radio" name="mlevel" required value="4">Gold Membership</label>  
-                    <label>Business Description<textarea name="bdesc" title="business" cols="20" rows="5"></textarea></label> 
-                    <input type="hidden" name="timestamp" id="timestamp">           
-                
-        
-                    <input type="submit" value="Register Application">
-                            
-                </form>
-            </div>
-            <div class="card-container">
-                <div class="np">
-                    <button>Open</button>
+            <div class="join-container">
+                <div class="form-container">
+                    <h2>Membership Application Form</h2>
+                    <form class="wform" method="get" action="thankyou.html">
+    
+                        <label for="fname">First Name
+                            <input type="text" required name="fname" title="First Name" autocomplete="first name">
+                        </label>
+                        <label for="lname">Last Name 
+                            <input type="text" required name="lname" title="last Name" autocomplete="last name">
+                        </label>
+                        <label for="orgtitle">Organizational Title
+                            <input type="text" name="orgtitle" title="Organizational Title" autocomplete="organization-title" pattern="^[A-Za-z\-\s]{7,}$" required>
+                        </label>
+                        <label for="email">Email
+                            <input type="email" name="email" title="email" autocomplete="email" placeholder="jdoe@gmail.com" required>
+                        </label>
+                        <label for="phone">Phone Number
+                            <input type="tel" name="phone" title="phone number" autocomplete="phone" required>
+                        </label>
+                        <label for="business">Business Name
+                            <input type="text" name="business" title="business name" autocomplete="organization" required>
+                        </label>
+                        <label for="mlevel">Membership Level
+                            <select name="mlevel" required>
+                                <option value="">Select Membership Level...&#9662;</option>
+                                <option value="1">NP Membership</option>
+                                <option value="2">Bronze Membership</option>
+                                <option value="3">Silver Membership</option>
+                                <option value="4">Gold Membership</option>
+                            </select>
+                        </label>                                    
+                        <label for="bdesc">Business Description<textarea name="bdesc" title="business" cols="20" rows="5"></textarea></label> 
+                        <input type="hidden" name="timestamp" id="timestamp">  
+    
+                        <input type="submit" value="Register Application">
+                                
+                    </form>
                 </div>
-                <div class="bronze">
-                    <button>Open</button>
+                <div class="cards-container">
+                    <h2>Membership Level</h2>                    
+                    <div class="card">
+                        <p>Non Profit Membership</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="card">
+                        <p>Bronze Membership</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="card">
+                        <p>Silver Membership</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="card">
+                        <p>Gold Membership</p>
+                        <button>Learn More</button>
+                    </div>
+                    <dialog id="levelDialog">
+                        <div>
+                            <h2></h2>
+                            <button>X</button>
+                        </div>
+                        <p></p>
+                    </dialog>
                 </div>
-                <div class="silver">
-                    <button>Open</button>
-                </div>
-                <div class="gold">
-                    <button>Open</button>
-                </div>
-            </div>
+            </div>                        
                               
         </div>
     </main>

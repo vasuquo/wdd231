@@ -19,17 +19,22 @@ const app = {
         app.toggleLinks();
         app.toggleDirectory();
         break;
-      case "join":
+      case "add":
         app.toggleMenu();
         app.toggleLinks();
+        app.membershipInfo();
         break;
+        case "summary":
+          app.toggleMenu();
+          app.toggleLinks();
+          app.getSummary();
+          break;
       case "discover":
         app.toggleMenu();
         app.toggleLinks();
         break;      
       default:
     }
-
     app.getCopyRight();
   },
   getMembers: async (option) => {
@@ -169,39 +174,39 @@ const app = {
     let display = document.querySelector("article");
     display.innerHTML = "";
 
-  if (members) {
-    members.forEach((member) => {
-      let logo = document.createElement("img");
-      logo.classList.add("listing");
-      logo.setAttribute("src", member.imageFile);
-      logo.setAttribute("alt", member.name);
-      logo.setAttribute("loading", "lazy");
-      logo.setAttribute("width", "55");
-      logo.setAttribute("height", "55");        
-      let section = document.createElement("section");
-      section.classList.add("listing");
-      let name = document.createElement("p");
-      name.classList.add("decorate");
-      name.textContent = member.name;
-      let address = document.createElement("p");
-      address.textContent = member.address;
-      let phone = document.createElement("p");
-      phone.textContent = member.phone[0];
-      let email = document.createElement("p");      
-      email.textContent = member.email;
-      let website = document.createElement("a");
-      website.setAttribute("href",member.website);
-      website.innerHTML = member.website;
+    if (members) {
+      members.forEach((member) => {
+        let logo = document.createElement("img");
+        logo.classList.add("listing");
+        logo.setAttribute("src", member.imageFile);
+        logo.setAttribute("alt", member.name);
+        logo.setAttribute("loading", "lazy");
+        logo.setAttribute("width", "55");
+        logo.setAttribute("height", "55");        
+        let section = document.createElement("section");
+        section.classList.add("listing");
+        let name = document.createElement("p");
+        name.classList.add("decorate");
+        name.textContent = member.name;
+        let address = document.createElement("p");
+        address.textContent = member.address;
+        let phone = document.createElement("p");
+        phone.textContent = member.phone[0];
+        let email = document.createElement("p");      
+        email.textContent = member.email;
+        let website = document.createElement("a");
+        website.setAttribute("href",member.website);
+        website.innerHTML = member.website;
 
-      section.appendChild(logo);
-      section.appendChild(name);
-      section.appendChild(address);
-      section.appendChild(phone);
-      section.appendChild(email);
-      section.appendChild(website);
+        section.appendChild(logo);
+        section.appendChild(name);
+        section.appendChild(address);
+        section.appendChild(phone);
+        section.appendChild(email);
+        section.appendChild(website);
 
-      display.appendChild(section);
-    });
+        display.appendChild(section);
+      });
     }
   },
   
@@ -307,8 +312,126 @@ const app = {
     }
 
   },
+  membershipInfo: () => {
+      let timestamp = document.querySelector("#timestamp");
+      let levelDialog = document.querySelector("#levelDialog");
+      let closeButton = document.querySelector("#levelDialog button");
+      let memberBenefit = document.querySelector("#levelDialog p");
+      let levelDesc = document.querySelector("#levelDialog h2");
+      let benefits = [
+         "Get access to business leaders and local influencers who can become partners, donors, or sponsors,Facilite collaborations with local businesses on shared goals like fundraising, or events,Help NGOs forster community integration and build  stronger roots locally. Cost: Non",
+         "Access to business mixersvents, Business Directory Listing, Use the chamber logo to build trust, Free or discounted entry to business training sessions. Annual suscription: 250,000.00.",
+         "Feature in chamber newsletters & website,Get business referrals from the chamber, Lower rates on chamber-sponsored ads, Access to deals from partner businesses, Join special interest groups or industry councils. Annual suscription: 500,000.00.",
+         "Get featured at major chamber events, Direct engagement with policymakers, Present at chamber events & conferences, Premium placement in directories & promotions, Invite-only roundtables & executive meetups. Annual suscription: 1,500,000.00."
+        ]
 
-                                                                                                      
+      closeButton.addEventListener("click", () => {
+        levelDialog.close();
+      });
+    
+      let mButton = document.querySelectorAll(".cards-container .card button");
+      let mDesc = document.querySelectorAll(".cards-container .card p");
+
+      for (let index = 0; index < mDesc.length; index++) {
+         mButton[index].addEventListener("click", () => {
+           levelDesc.innerHTML = mDesc[index].innerHTML;
+           memberBenefit.innerHTML = benefits[index];
+           levelDialog.showModal();
+         });        
+      }
+          
+      
+  },
+  getSummary: () => {
+      let newMember = new URLSearchParams(window.location.search);
+
+      let summaryTable = document.querySelector("#summaryTable");
+      let status;
+      let fname = newMember.get("fname");
+      let lname = newMember.get("lname");
+      let orgtitle = newMember.get("orgtitle");
+      let email = newMember.get("email");
+      let phone = newMember.get("phone");
+      let business = newMember.get("business");
+      let mlevel = newMember.get("mlevel");
+      let bdesc = newMember.get("bdesc");      
+      let timestamp = newMember.get("timestamp"); 
+      
+      let tableRow = summaryTable.insertRow(1);
+      let cell1 = tableRow.insertCell(0);
+      let cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "First Name";
+      cell2.innerHTML = fname;
+
+      tableRow = summaryTable.insertRow(2);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Last Name";
+      cell2.innerHTML = lname;
+
+      tableRow = summaryTable.insertRow(3);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Organizational Title";
+      cell2.innerHTML = orgtitle;
+      
+      tableRow = summaryTable.insertRow(4);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Email";
+      cell2.innerHTML = email;
+
+      tableRow = summaryTable.insertRow(5);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Phone Number";
+      cell2.innerHTML = phone;
+      
+      tableRow = summaryTable.insertRow(6);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Business Name";
+      cell2.innerHTML = business;
+
+      if (mlevel === "1")
+         status = "Non Profit Membershp";
+      else if (mlevel === "2")
+         status = "Bronze Membership";
+      else if (mlevel === "3")
+         status = "Silver Membership";
+      else if (mlevel === "4")
+         status = "Gold Membership";
+
+      tableRow = summaryTable.insertRow(7);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Membership Level";
+      cell2.innerHTML = status;
+
+      tableRow = summaryTable.insertRow(8);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Business Description";
+      cell2.innerHTML = bdesc;
+
+
+      tableRow = summaryTable.insertRow(9);
+      cell1 = tableRow.insertCell(0);
+      cell2 = tableRow.insertCell(1);
+
+      cell1.innerHTML = "Current Date";
+      cell2.innerHTML = timestamp;
+            
+  },
+                                                                                                    
   /* Copyright function */
   getCopyRight: () => {
     let projectName = document.querySelector("#projectName");
