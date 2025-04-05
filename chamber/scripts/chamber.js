@@ -313,7 +313,7 @@ const app = {
 
   },
   membershipInfo: () => {
-      let timestamp = document.querySelector("#timestamp");
+      document.getElementById("timestamp").value = new Date().getTime();      
       let levelDialog = document.querySelector("#levelDialog");
       let closeButton = document.querySelector("#levelDialog button");
       let memberBenefit = document.querySelector("#levelDialog p");
