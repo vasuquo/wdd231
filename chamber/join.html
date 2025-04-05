@@ -53,22 +53,22 @@
                     <form class="wform" method="get" action="thankyou.html">
     
                         <label for="fname">First Name
-                            <input type="text" required name="fname" title="First Name" autocomplete="first name">
+                            <input type="text" required name="fname" id="fname" title="First Name" autocomplete="on">
                         </label>
                         <label for="lname">Last Name 
-                            <input type="text" required name="lname" title="last Name" autocomplete="last name">
+                            <input type="text" required name="lname" id="lname" title="last Name" autocomplete="on">
                         </label>
                         <label for="orgtitle">Organizational Title
-                            <input type="text" name="orgtitle" title="Organizational Title" autocomplete="organization-title" pattern="^[A-Za-z\-\s]{7,}$" required>
+                            <input type="text" name="orgtitle" id="orgtitle" title="Organizational Title" autocomplete="organization-title" pattern="^[A-Za-z\-\s]{7,}$" required>
                         </label>
                         <label for="email">Email
-                            <input type="email" name="email" title="email" autocomplete="email" placeholder="jdoe@gmail.com" required>
+                            <input type="email" name="email" id="email" title="email" autocomplete="on" placeholder="jdoe@gmail.com" required>
                         </label>
                         <label for="phone">Phone Number
-                            <input type="tel" name="phone" title="phone number" autocomplete="phone" required>
+                            <input type="tel" name="phone" id="phone" title="phone number" autocomplete="on" required>
                         </label>
                         <label for="business">Business Name
-                            <input type="text" name="business" title="business name" autocomplete="organization" required>
+                            <input type="text" name="business" id="business" title="business name" autocomplete="organization" required>
                         </label>
                         <label for="mlevel">Membership Level
                             <select name="mlevel" required>
