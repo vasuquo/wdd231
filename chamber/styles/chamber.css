@@ -448,8 +448,8 @@ dialog {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: var(--card-bg-color);
-  color: var(--body-color);
+  background: var(--body-color);
+  color: var(--footer-color);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -470,6 +470,7 @@ dialog div button {
   font-size: 40px;
   font-weight: 600;
   background: none;
+  border: none;
   color: var(--finder-color);
   cursor: pointer;
 }
@@ -511,6 +512,11 @@ caption {
   margin-bottom: 15px;
   color: var(--white-color);
 }
+
+.thanks-container p {
+  overflow-x: auto;
+}
+
 
 .thanks-container p {
   margin-top: 10px;
