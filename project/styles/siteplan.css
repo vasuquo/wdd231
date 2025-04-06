@@ -5,8 +5,8 @@
     --underline-color: #ff523b;
     --rating-color: #f0c040;
     --btn-bg-color: #b30707;
-    --article-border: border: 1px #c0c0c0 solid;
-    --card-border: 0.1rem #c0c0c0 solid;
+    --article-border: #c0c0c0;
+    --card-border: #c0c0c0;
     --card-bg-color: #f8fef8;
 }
 
