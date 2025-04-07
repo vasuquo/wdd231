@@ -30,6 +30,7 @@ const app = {
           app.getSummary();
           break;
       case "discover":
+        app.getPlaces();
         app.toggleMenu();
         app.toggleLinks();
         break;      
@@ -431,6 +432,45 @@ const app = {
       cell1.innerHTML = "Current Date";
       cell2.innerHTML = timestamp;
             
+  },
+  getPlaces: async () => {
+    try {
+      let allPlaces = document.querySelector("#discover-places");
+      let response = await fetch('data/places.json');
+      let data = await response.json();
+      if (data.myplace) {
+          data.myplace.forEach((place) => {
+          let card = document.createElement("div");
+          let photo = document.createElement("img");
+          photo.setAttribute("src", place.photo);
+          photo.setAttribute("alt", place.name);
+          photo.setAttribute("loading", "lazy");
+          photo.setAttribute("width", "300");
+          photo.setAttribute("height", "200");      
+          let cardDetails = document.createElement("div")  ;
+          let location = document.createElement("address");
+          location.innerHTML = place.address;
+          let title = document.createElement("h2");
+          title.textContent = place.name;
+          let descrp = document.createElement("p");
+          descrp.textContent = place.description;          
+          let learn = document.createElement("button");
+          learn.textContent = "Learn More";
+  
+          card.appendChild(photo); 
+          card.appendChild(title);
+          card.appendChild(descrp);
+          card.appendChild(location);     
+          card.appendChild(learn);
+  
+          allPlaces.appendChild(card);
+        });
+      }
+              
+    } catch (error) {
+      console.log(error);
+    }
+
   },
                                                                                                     
   /* Copyright function */

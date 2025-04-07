@@ -1,0 +1,73 @@
+{
+  "myplace": [
+    {
+      "name": "Agodi Gardens",
+      "address": "Parliament Road, Ibadan, Oyo State, Nigeria",
+      "description": "A serene park offering lush greenery, a zoo, swimming pools, and recreational facilities, ideal for picnics and family outings.",
+      "entry_fee": "₦500 per person; additional ₦500 for swimming pool access",
+      "photo": "images/agodi_1.webp"
+    },
+    {
+      "name": "Mapo Hall",
+      "address": "Mapo Hill, Oja Oba, Ibadan, Oyo State, Nigeria",
+      "description": "A historic colonial-style city hall offering panoramic views of Ibadan and serving as a venue for significant events.",
+      "entry_fee": "Approximately ₦1,000 per person",
+      "photo": "images/mapo_1.webp"
+    },
+    {
+      "name": "University of Ibadan Zoological Garden",
+      "address": "University of Ibadan Campus, Ibadan, Oyo State, Nigeria",
+      "description": "A well-maintained zoo housing a variety of animal species, providing educational and recreational experiences.",
+      "entry_fee": "₦500 for adults; ₦300 for children on excursions",
+      "photo": "images/uizoo_1.webp"
+    },
+    {
+      "name": "National Museum of Unity",
+      "address": "Aleshinloye Road, Ibadan, Oyo State, Nigeria",
+      "description": "A museum showcasing Nigeria's diverse cultural heritage through artifacts and exhibitions.",
+      "entry_fee": "₦500 per person",
+      "photo": "images/museum_1.webp"
+    },
+    {
+      "name": "Ilaji Resort",
+      "address": "Oloyo Village, Off Ona-Ara Local Govt. Secretariat, Akanran, Ibadan, Oyo State, Nigeria",
+      "description": "Ilaji Resort is a premier hospitality and sports destination offering a blend of relaxation and recreation. ",
+      "photo": "images/ilaji_1.webp"
+    },
+    {
+      "name": "Cocoa House",
+      "address": "Dugbe, Ibadan, Oyo State, Nigeria",
+      "description": "Nigeria's first skyscraper, housing offices and the Odu'a Museum and Hall of Fame.",
+      "entry_fee": "Access to the building is free; museum entry is ₦200 per person",
+      "photo": "images/cocoa_1.webp"
+    },
+    {
+      "name": "Trans Wonderland Amusement Park",
+      "address": "Trans Amusement Park Road, Ibadan, Oyo State, Nigeria",
+      "description": "An amusement park offering various rides and games for family entertainment.",
+      "entry_fee": "₦300 per person; additional fees for rides",
+      "photo": "images/wonderland_1.webp"
+    },
+    {
+      "name": "Bower's Tower",
+      "address": "Oke Are, Ibadan, Oyo State, Nigeria",
+      "description": "A historic tower providing a panoramic view of Ibadan, ideal for sightseeing and photography.",
+      "entry_fee": "Approximately ₦1,000 per person",
+      "photo": "images/btower_1.webp"
+    },
+    {
+      "name": "The Jericho Mall",
+      "address": "No 20, Kudeti Avenue, Onireke GRA, Ibadan, Oyo State, Nigeria",
+      "description": "A modern shopping mall featuring various retail stores, eateries, and entertainment options.",
+      "entry_fee": "Free entry",
+      "photo": "images/jmall.webp"
+    },
+    {
+      "name": "Ventura Mall",
+      "address": "Samonda, Ibadan, Oyo State, Nigeria",
+      "description": "A contemporary mall offering shopping, dining, a cinema, and arcade games for all ages.",
+      "entry_fee": "Free entry",
+      "photo": "images/ventura_1.webp"
+    }
+  ]
+}

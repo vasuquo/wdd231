@@ -144,6 +144,11 @@ header .container {
   width: 100px;
 }
 
+main p {
+  text-align: center;
+  font-size: 18px;
+}
+
 main .container .cards {
   display: block; 
 }
@@ -524,7 +529,55 @@ caption {
   font-size: 18px;
 }
 
-@media screen and (min-width: 600px) {
+#discover-places div {
+  margin: 1rem;
+  border: 1px solid var(--hover-color);
+  background-color: var(--body-color);
+  color: var(--header-bg-color);
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-areas: 
+  "title"
+  "photo"
+  "description"
+  "location"
+  "learn";                
+}
+
+#discover-places div h2 {
+  margin: 1rem 10px;
+  grid-area: title;
+}
+
+#discover-places div img {
+  width: 100%;
+  grid-area: photo;
+}
+
+#discover-places div p {
+  margin: 1rem 10px;
+  text-align: start;
+  grid-area: description;
+}
+
+#discover-places div address {
+  margin: 1rem 10px;
+  grid-area: location;
+}
+
+
+#discover-places div button {
+  margin: 1rem 10px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: var(--header-bg-color);
+  color: var(--white-color);
+  grid-area: learn;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
   
   header .container {
     display: flex;
@@ -641,6 +694,30 @@ caption {
     display: flex;
     gap: 10px;
   }
+
+  #discover-places div {    
+    grid-template-areas: 
+    "photo title"
+    "photo description"
+    "photo location"
+    "learn";            
+}
+
+#discover-places div img {
+    width: 300px;
+    grid-area: photo;
+}
     
 
+}
+
+@media only screen and (min-width: 1024px) {
+  #discover-places {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+              
+  }
+
+  
 }

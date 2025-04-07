@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of Commerce Home Page">
+      content="WDD 231 - Web Frontend Development I | Victor Asuquo | Chamber of commerce descover Page">
     <meta property="og:title" content="Ifelodun Ibadan Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vasuquo.github.io/wdd231/chamber">
     <meta property="og:image" content="https://vasuquo.github.io/wdd/chamber/images/ifelodun-logo.webp">   
     <meta property="og:description" content="At Ifelodun chamber of commerce we seek to promote the business interests of our members.">
     <meta name="author" content="Victor Asuquo">
-    <title>WDD 231: Web Frontend Development I - Victor Asuquo</title>
+    <title>Join Us And Become A Member</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/chamber.js" defer></script>
 </head>
-<body id="home">
+<body id="discover">
     <header>
         <div class="container">
             <div class="logo">
@@ -33,53 +33,23 @@
             </div>
             <div class="grp">
                 <nav class="navbar">
-                    <a href="index.html" title="Home" class="active">Home</a>
+                    <a href="index.html" title="Home">Home</a>
                     <a href="directory.html" title="Directory">Directory</a>
                     <a href="join.html" title="Join">Join</a>
-                    <a href="discover.html" title="Discover">Discover</a>                                                
+                    <a href="discover.html" title="Discover" class="active">Discover</a>                                                
                 </nav>
                 <div class="icons">
                     <img src="images/contrast.jpg" alt="Half circle">
                     <button id="menu" aria-label="menu"></button>                
                 </div>                
-            </div>            
-        </div>
+            </div>                      
+        </div>        
     </header>
     <main>
+        <h1>Discover Ibadan</h1>  
+        <p>Top Places to Visit in Ibadan, Nigeria</p>
         <div class="container">
-            <div class="hero">
-                <p class="w1">Welcome to Ifelodun Chamber of Commerce</p>
-                <p class="w2">Connecting businesses, fostering growth, and enriching our community</p>
-                <button id="join" onClick="location.href='join.html'">Join Us Today</button>
-            </div>
-            <div class="row">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="./images/ife_bus_1.webp" alt="Image 1">
-                        <img src="./images/ife_bus_2.webp" alt="Image 2">
-                        <img src="./images/ife_bus_3.webp" alt="Image 3">
-                        <img src="./images/ife_bus_4.webp" alt="Image 4">
-                        <img src="./images/ife_bus_5.webp" alt="Image 5">
-                    </div>
-                </div>
-                <div class="event-weather">
-                    <div class="events">
-                        <h2>community Events</h2>
-                        <p>Join the local farmers market every saturday at 10 Am.</p>
-                        <p>Ifelodun annual business expo . Take advantage to promote your products and services.</p>
-                        <p>Ogun state sponsored Workshops & Seminars  Educational sessions on topics like marketing, finance, leadership, and digital transformation for business success.</p>
-                    </div>
-                    <div class="weather">
-                        <h2>Weather</h2>
-                        <p>Current temperature in Ibadan, Nigeria<span id="current-temp"></span></p>
-                        <div class="weather-condition"></div>  
-                        <p>Forecast temperature is <span id="forecast-temp"></span></p>                      
-                    </div>
-                </div>                           
-            </div>
-            <div><h1>Member Spotlights</h1></div>
-            <section class="cards"></section>
-            <article></article>            
+            <div id="discover-places"></div>                                                      
         </div>
     </main>
     <footer>
