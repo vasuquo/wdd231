@@ -15,19 +15,12 @@
       "photo": "images/mapo_1.webp"
     },
     {
-      "name": "University of Ibadan Zoological Garden",
+      "name": "UI Zoological Garden",
       "address": "University of Ibadan Campus, Ibadan, Oyo State, Nigeria",
       "description": "A well-maintained zoo housing a variety of animal species, providing educational and recreational experiences.",
       "entry_fee": "₦500 for adults; ₦300 for children on excursions",
       "photo": "images/uizoo_1.webp"
-    },
-    {
-      "name": "National Museum of Unity",
-      "address": "Aleshinloye Road, Ibadan, Oyo State, Nigeria",
-      "description": "A museum showcasing Nigeria's diverse cultural heritage through artifacts and exhibitions.",
-      "entry_fee": "₦500 per person",
-      "photo": "images/museum_1.webp"
-    },
+    },  
     {
       "name": "Ilaji Resort",
       "address": "Oloyo Village, Off Ona-Ara Local Govt. Secretariat, Akanran, Ibadan, Oyo State, Nigeria",
@@ -40,14 +33,7 @@
       "description": "Nigeria's first skyscraper, housing offices and the Odu'a Museum and Hall of Fame.",
       "entry_fee": "Access to the building is free; museum entry is ₦200 per person",
       "photo": "images/cocoa_1.webp"
-    },
-    {
-      "name": "Trans Wonderland Amusement Park",
-      "address": "Trans Amusement Park Road, Ibadan, Oyo State, Nigeria",
-      "description": "An amusement park offering various rides and games for family entertainment.",
-      "entry_fee": "₦300 per person; additional fees for rides",
-      "photo": "images/wonderland_1.webp"
-    },
+    },  
     {
       "name": "Bower's Tower",
       "address": "Oke Are, Ibadan, Oyo State, Nigeria",

@@ -535,6 +535,9 @@ caption {
   background-color: var(--body-color);
   color: var(--header-bg-color);
   border-radius: 10px;
+  overflow: hidden;
+
+  justify-content: center;
 
   display: grid;
   grid-template-areas: 
@@ -546,29 +549,28 @@ caption {
 }
 
 #discover-places div h2 {
-  margin: 1rem 10px;
+  margin: 10px;
   grid-area: title;
 }
 
 #discover-places div img {
-  width: 100%;
+  margin: 0 10px;
   grid-area: photo;
 }
 
 #discover-places div p {
-  margin: 1rem 10px;
-  text-align: start;
+  margin: 10px;
   grid-area: description;
 }
 
 #discover-places div address {
-  margin: 1rem 10px;
+  margin: 0 10px;
   grid-area: location;
 }
 
 
 #discover-places div button {
-  margin: 1rem 10px;
+  margin: 10px;
   padding: 10px;
   border-radius: 30px;
   background-color: var(--header-bg-color);
@@ -697,10 +699,17 @@ caption {
 
   #discover-places div {    
     grid-template-areas: 
-    "photo title"
+    "title ."
     "photo description"
     "photo location"
-    "learn";            
+    "learn learn";
+    
+    transition: transform 0.3s ease;
+        
+}
+
+#discover-places div:hover {
+  transform: translateY(-10px);
 }
 
 #discover-places div img {
