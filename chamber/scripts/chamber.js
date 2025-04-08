@@ -490,8 +490,13 @@ const app = {
        
        if (diffDays < 1)
         visitMessage.innerHTML += `<p>Back so soon! Awesome!</p>`;
-       else
-       visitMessage.innerHTML += `<p>You last visited ${diffDays} day(s) ago.</p>`;    
+       else {
+        diffDays = Math.ceil(diffDays);
+        let dm = "days";
+        if (diffDays == 1)
+          dm = "day";
+        visitMessage.innerHTML += `<p>You last visited ${diffDays} ${dm} ago.</p>`;  
+       }         
     } else {
       visitMessage.innerHTML += `<p>Welcome! Let us know if you have any questions.</p>`;
     }
