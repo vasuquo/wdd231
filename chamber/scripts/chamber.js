@@ -30,6 +30,7 @@ const app = {
           app.getSummary();
           break;
       case "discover":
+        app.checkVisits();
         app.getPlaces();
         app.toggleMenu();
         app.toggleLinks();
@@ -470,6 +471,32 @@ const app = {
     } catch (error) {
       console.log(error);
     }
+
+  },
+  checkVisits: () => {
+    let visitMessage = document.getElementById('visitMessage');
+    let lastVisit = localStorage.getItem('lastVisit');
+    let now = new Date();
+
+    visitMessage.addEventListener("click", () => {
+      visitMessage.style.display='none';
+    });
+
+    visitMessage.style.display="block";
+    if (lastVisit) {
+      let prev = new Date(lastVisit);
+       let diffTime = now - prev;
+       let diffDays = diffTime / (1000 * 60 * 60 * 24);
+       
+       if (diffDays < 1)
+        visitMessage.innerHTML += `<p>Back so soon! Awesome!</p>`;
+       else
+       visitMessage.innerHTML += `<p>You last visited ${diffDays} day(s) ago.</p>`;    
+    } else {
+      visitMessage.innerHTML += `<p>Welcome! Let us know if you have any questions.</p>`;
+    }
+
+    localStorage.setItem('lastVisit', now);    
 
   },
                                                                                                     

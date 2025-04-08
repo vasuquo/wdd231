@@ -579,6 +579,40 @@ caption {
   cursor: pointer;
 }
 
+.visit-message {
+  display: none;
+}
+
+.visit-message {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  background-color: var(--body-color);
+  color: var(--header-bg-color);
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 10;
+  max-width: 600px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.visit-message button {
+  background-color: var(--header-bg-color);
+  color: var(--white-color);
+  border: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+}
+
+.visit-message button:hover {
+  background: #074577;
+}
+
 @media only screen and (min-width: 600px) {
   
   header .container {
