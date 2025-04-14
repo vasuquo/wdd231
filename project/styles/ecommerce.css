@@ -6,7 +6,7 @@
     --btn-bg-color: #b30707;
     --btn-color: #fff;
     --footer-bg-color: #00008b;
-    --form-border: border: 1px #c0c0c0 solid;
+    --form-border:  #c0c0c0;
     --card-border: 0.1rem #c0c0c0 solid;
     --card-bg-color: #f8fef8;
 }
@@ -491,7 +491,7 @@ td a {
 }
 
 td img {
-    width: 80;
+    width: 80px;
     height: 80px;
     margin-right: 10px;
 }
