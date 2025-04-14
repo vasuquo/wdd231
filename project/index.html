@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>eCommerce Website - Victor Asuquo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="WDD 231 Project - eCommerce Website - Victor Asuquo">
+        <meta name="author" content="Victor Asuquo">
+        <meta property="og:title" content="Easyshop eCommerce Website">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vasuquo.github.io/wdd231/project">
+        <meta property="og:image" content="https://vasuquo.github.io/wdd231/project/images/logo.webp">   
+        <meta property="og:description" content="At EasyShopping we provide online shopping facilities, giving clients means to shop anywhere in the world that they are located.">    
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="styles/ecommerce.css" rel="stylesheet">
+        <script src="scripts/ecommerce.js" defer></script>
+    </head>
+    <body id="Home">
+        <header>
+            <div class="container">
+                <a href="index.html"><img id="logo" src="images/logo.webp" alt="eCommerce Logo"></a>                                
+                <div class="layer">
+                    <nav>  
+                        <ul class="navigation">
+                            <li><a href="index.html" class="current">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="accounts.html">Account</a></li>                                        
+                        </ul> 
+                      </nav>
+                      <div class="icons">
+                        <a class="cart-link" href="cart.html"><img id="bag" src="images/cart.svg" alt="Cart"><span class="badge"></span></a> 
+                        <img id="menu" src="images/hamburger.svg" alt="menu">
+                        <div class="user"></div>  
+                      </div>                                    
+                </div>  
+                             
+            </div>            
+        </header>
+        <main>
+            <div class="container">
+                <section class="caption">
+                    <div class="quote">  
+                        <h1>Shopping has never been so easy!</h1>
+                        <p>Discover the magic of effortless shopping - where every click leads to delight. Welcome to your new favorite online destination.</p>                        
+                    </div>                
+                    <div class="hero">
+                        <picture>
+                            <source media="(min-width: 1000px)" srcset="images/hero2-large.webp">
+                            <source media="(min-width: 500px)" srcset="images/hero-medium.webp">
+                            <img src="images/hero-small.webp" alt="eCommerce image" width="500" height="500">
+                        </picture>
+                    </div>
+                </section>
+                <section class="featured-products">
+                    <h2 class="title">Featured Products</h2>
+                    <div class="f-products center">
+                    </div>
+                </section>
+                <section class="Latest-products">
+                    <h2 class="title">Latest Products</h2>
+                    <div class="l-products center">
+                    </div>
+                </section>
+            </div>            
+        </main>
+        <footer>
+            <div class="container">
+                <p id="copyright"></p>
+                <p id="modification"></p>
+            </div>            
+        </footer>    
+    </body>
+</html>

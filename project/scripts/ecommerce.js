@@ -46,267 +46,32 @@ const app = {
     app.getCopyRight();
     app.getDateModified();
   },
-  getData: (ptype) => {
-    let products = [
-      {
-        id: "product-1",
-        name: "Pattern Print T-Shirt",
-        description: "Pattern Print T-Shirt",
-        category: "mens",
-        SrcImage: "images/d1.webp",
-        thumbNails: [
-          "images/tnail1-prod-1.webp",
-          "images/tnail2-prod-1.webp",
-          "images/tnail3-prod-1.webp",
-          "images/tnail4-prod-1.webp",
-        ],
-        related: [],
-        price: 150.0,
-        ratings: 2.3,
-        productType: "featured",
-      },
-      {
-        id: "product-2",
-        name: "Dashiki Pearls Dress",
-        description: "Tribal Graphic Patchwork",
-        category: "mens",
-        SrcImage: "images/d2.webp",
-        thumbNails: [
-          "images/tnail1-prod-2.webp",
-          "images/tnail2-prod-2.webp",
-          "images/tnail3-prod-2.webp",
-          "images/tnail4-prod-2.webp",
-        ],
-        related: [],
-        price: 250.0,
-        ratings: 4.5,
-        productType: "featured",
-      },
-      {
-        id: "product-3",
-        name: "Dashiki Pearls Dress",
-        description: "Dashiki Knee-Length Dress",
-        category: "mens",
-        SrcImage: "images/d3.webp",
-        thumbNails: [
-          "images/tnail1-prod-3.webp",
-          "images/tnail2-prod-3.webp",
-          "images/tnail3-prod-3.webp",
-          "images/tnail4-prod-3.webp",
-        ],
-        related: [],
-        price: 750.0,
-        ratings: 6.5,
-        productType: "featured",
-      },
-      {
-        id: "product-4",
-        name: "Ankara Pearls Dress",
-        description: "Ankara Pearls Dress",
-        category: "mens",
-        SrcImage: "images/d4.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 350.0,
-        ratings: 4.8,
-        productType: "featured",
-      },
-      {
-        id: "product-5",
-        name: "Dashiki Pearls Dress",
-        description: "Dashiki  Dress",
-        category: "mens",
-        SrcImage: "images/d5.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 600.0,
-        ratings: 3.5,
-        productType: "latest",
-      },
-      {
-        id: "product-6",
-        name: "Dashiki Pearls Dress",
-        description: "Dashiki Pearls Dress",
-        category: "mens",
-        SrcImage: "images/d6.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 550.0,
-        ratings: 2.5,
-        productType: "latest",
-      },
-      {
-        id: "product-7",
-        name: "Ankara Short Dress",
-        description:
-          "Are you looking for something fun and classy? Our Ankara Skater Dress is ideal for any occasion! This dress is perfect for all occasions.",
-        category: "womens",
-        SrcImage: "images/d7.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 1500.0,
-        ratings: 4.5,
-        productType: "latest",
-      },
-      {
-        id: "product-8",
-        name: "Adidas Suede shoes",
-        description: "Adidas Suede shoes",
-        category: "shoes",
-        SrcImage: "images/d8.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 1500.0,
-        ratings: 4.5,
-        productType: "latest",
-      },
-      {
-        id: "product-9",
-        name: "Adidas T-shirt",
-        description: "Adidas T-shirt",
-        category: "mens",
-        SrcImage: "images/d9.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: ["images/d8.webp", "images/d11.webp", "images/d12.webp"],
-        price: 950.0,
-        ratings: 4.5,
-        productType: "featured",
-      },
-      {
-        id: "product-10",
-        name: "Adidas Special Snickers",
-        description: "Adidas Special Snickers",
-        category: "shoes",
-        SrcImage: "images/d10.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 550.0,
-        ratings: 2.7,
-        productType: "",
-      },
-      {
-        id: "product-11",
-        name: "Rolex Wrist Watch",
-        description: "Rolex Wrist Watch",
-        category: "watches",
-        SrcImage: "images/d11.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 550.0,
-        ratings: 2.7,
-        productType: "",
-      },
-      {
-        id: "product-12",
-        name: "Trousers",
-        description: "Trousers",
-        category: "mens",
-        SrcImage: "images/d12.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 550.0,
-        ratings: 2.7,
-        productType: "",
-      },
-      {
-        id: "product-13",
-        name: "Gold Ring",
-        description: "16 Carat Gold Ring",
-        category: "jewelries",
-        SrcImage: "images/d13.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 350.0,
-        ratings: 3.8,
-        productType: "",
-      },
-      {
-        id: "product-14",
-        name: "Note Book",
-        description: "Panasonic Note Book",
-        category: "electronics",
-        SrcImage: "images/d14.webp",
-        thumbNails: [
-          "images/tnail1-prod-4.webp",
-          "images/tnail2-prod-4.webp",
-          "images/tnail3-prod-4.webp",
-          "images/tnail4-prod-4.webp",
-        ],
-        related: [],
-        price: 350.0,
-        ratings: 3.8,
-        productType: "",
-      },
-    ];
-
-    let categories = [
-      "mens",
-      "womens",
-      "jewelries",
-      "electronics",
-      "shoes",
-      "watches",
-    ];
-
-    if (ptype == "all") {
-      return products;
-    } else if (ptype == "featured" || ptype == "latest") {
-      return products.filter((product) => product.productType == ptype);
-    } else if (categories.find((x) => x === ptype)) {
-      return products.filter((product) => product.category === ptype);
-    } else {
-      return products.find((product) => product.id === ptype);
+  getData: async (ptype) => {    
+    try {
+      let response = await fetch('data/products.json');
+      let data = await response.json();
+      let categories = [
+        "mens",
+        "womens",
+        "jewelries",
+        "electronics",
+        "shoes",
+        "watches",
+      ];
+      if (ptype == "all") {
+        return data.prod;
+      } else if (ptype == "featured" || ptype == "latest") {
+        return data.prod.filter((product) => product.productType == ptype);
+      } else if (categories.find((x) => x === ptype)) {
+        return data.prod.filter((product) => product.category === ptype);
+      } else {
+        return data.prod.find((product) => product.id === ptype);
+      }
+      
+    } catch (error) {
+      console.log(error);
     }
+        
   },
 
   toggleMenu: () => {
@@ -331,12 +96,10 @@ const app = {
       cart.classList.toggle("open");
     });
   },
-  /* getProduct function to get a single product details    */
-  getProduct: () => {
-    let change = false;
-    let url = new URL(window.location.href);
-    let id = url.searchParams.get("id");
-    let product = app.getData(id);
+  getProduct_new: async (id) => {
+    let product = await app.getData(id);
+    let productDialog = document.querySelector("#productDialog");
+    let closeButton = document.querySelector("#productDialog button");
     let productImg = document.querySelector(".product-img");
     let img = document.createElement("img");
     let h1 = document.querySelector("h1");
@@ -349,7 +112,38 @@ const app = {
     h3.innerHTML = `Price:  ${app.formatCurrency(product.price)}`;
     h4.innerHTML = `Rating: ${app.starRatings(product.ratings)}`;
     p.textContent = product.description;
-    img.setAttribute("src", product.SrcImage);
+    img.setAttribute("src", product.srcImage);
+    img.setAttribute("alt", product.name);
+    img.setAttribute("loading", "lazy");
+    productImg.appendChild(img);
+
+    closeButton.addEventListener("click", () => {
+      productDialog.close();
+    });
+
+    productDialog.showModal();
+
+  },
+
+  /* getProduct function to get a single product details    */
+  getProduct: async () => {
+    let change = false;
+    let url = new URL(window.location.href);
+    let id = url.searchParams.get("id");
+    let product = await app.getData(id);
+    let productImg = document.querySelector(".product-img");
+    let img = document.createElement("img");
+    let h1 = document.querySelector("h1");
+    let h3 = document.querySelector("h3");
+    let h4 = document.querySelector("h4");
+    let p = document.querySelector("p");
+    let aTag = document.querySelector(".btn");
+    let qty = document.querySelector("#qty");
+    h1.textContent = product.name;
+    h3.innerHTML = `Price:  ${app.formatCurrency(product.price)}`;
+    h4.innerHTML = `Rating: ${app.starRatings(product.ratings)}`;
+    p.textContent = product.description;
+    img.setAttribute("src", product.srcImage);
     img.setAttribute("alt", product.name);
     img.setAttribute("loading", "lazy");
     productImg.appendChild(img);
@@ -362,18 +156,58 @@ const app = {
       aTag.href = `cart.html?id=${product.id}&qty=1`;
     }
   },
-
-  displayProducts: (nodeElement, ptype) => {
-    let products = app.getData(ptype);
+  displayProducts_new: async (nodeElement, ptype) => {
+    let products = await app.getData(ptype);
     nodeElement.innerHTML = "";
 
     products.forEach((product) => {
       let ratings = app.starRatings(parseInt(product.ratings));
       let card = document.createElement("div");
       card.classList.add("card");
+      card.addEventListener("click", () => app.getProduct_new(product.id));
+      let cardImage = document.createElement("img");
+      cardImage.setAttribute("src", product.srcImage);
+      cardImage.setAttribute("alt", product.id);
+      cardImage.setAttribute("loading", "lazy");
+      cardImage.classList.add("medium");
+
+      let cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
+
+      let name = document.createElement("h2");
+      name.textContent = product.name;
+
+      let ratingDiv = document.createElement("div");
+      ratingDiv.classList.add("rating");
+      ratingDiv.innerHTML = ratings;
+
+      let priceDiv = document.createElement("div");
+      priceDiv.innerHTML = `${app.formatCurrency(product.price)}`;
+
+      card.appendChild(cardImage);
+      cardBody.appendChild(name);
+      cardBody.appendChild(ratingDiv);
+      cardBody.appendChild(priceDiv);
+
+      card.appendChild(cardBody);
+      nodeElement.appendChild(card);
+
+    });
+
+  },
+
+  displayProducts: async (nodeElement, ptype) => {
+    let products = await app.getData(ptype);
+    nodeElement.innerHTML = "";
+
+    products.forEach((product) => {
+      let ratings = app.starRatings(parseInt(product.ratings));
+      let card = document.createElement("div");
+      card.classList.add("card");
+
       let cardTag = `
         <a href="product.html?id=${product.id}">     
-        <img class="medium" src="${product.SrcImage}" alt="${
+        <img class="medium" src="${product.srcImage}" alt="${
         product.id
       }" loading="lazy" />
         </a>
@@ -475,13 +309,13 @@ const app = {
     }
   },
 
-  addToCart: (id, qty) => {
+  addToCart: async (id, qty) => {
     /* Declare array variable for cart items */
     let cartItems = localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [];
     let alreadyInCart = false;
-    let product = app.getData(id);
+    let product = await app.getData(id);
 
     if (cartItems.length === 0) {
       alreadyInCart = false;
@@ -499,7 +333,7 @@ const app = {
         id: id,
         name: product.name,
         price: product.price,
-        image: product.SrcImage,
+        image: product.srcImage,
         qty: qty,
       });
     }
@@ -732,8 +566,8 @@ const app = {
   },
 
   initStorage: () => {
-    //localStorage.removeItem("cartItems");
-    //localStorage.removeItem("userInfo");
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("userInfo");
   },
 
   /* Copyright function */
@@ -767,7 +601,7 @@ const app = {
   /* Currency format function to format item price */
   formatCurrency: (num) => {
     const convNum = Number(num.toFixed(2)).toLocaleString();
-    return `$${convNum} `;
+    return `\u20A6${convNum} `;
   },
 
   /* Function to toggle Login / Registration form  */
@@ -791,6 +625,30 @@ const app = {
       indicator.style.transform = "translateX(130px)";
     });
   },
+  toggleLinks: () => {
+    let links = document.querySelectorAll(".navigation li a");
+
+    /* Event Listener for mobile menu  */
+    if (links.length) {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          let curr = e.target.textContent;
+          links.forEach((link) => {
+            if (link.textContent === curr) {
+              link.className = 'current';
+              console.log(link);
+          } else {
+              link.className = '';
+          }
+          });
+         e.preventDefault();
+         window.open(link.href);
+
+        });
+      });
+    }
+    
+  },  
 };
 
 app.init();
